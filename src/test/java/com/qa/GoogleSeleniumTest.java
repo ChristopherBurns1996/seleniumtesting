@@ -30,8 +30,14 @@ public class GoogleSeleniumTest {
         WebElement searchBar = driver.findElement(By.name("q"));
         assertTrue(searchBar.isDisplayed());
         searchBar.sendKeys("funny cat pictures");
+        Thread.sleep(5000);
         WebElement submitButton = driver.findElement(By.name("btnK"));
         submitButton.click();
         Thread.sleep(5000);
+        WebElement linkToBiggerPicture = driver.findElementByLinkText("Images for funny cat");
+        linkToBiggerPicture.click();
+        Thread.sleep(5000);
+
+
     }
 }
