@@ -37,7 +37,5 @@ public class GoogleSeleniumTest {
         WebElement linkToBiggerPicture = driver.findElementByLinkText("Images for funny cat");
         linkToBiggerPicture.click();
         Thread.sleep(5000);
-
-
     }
 }
