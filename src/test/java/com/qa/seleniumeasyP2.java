@@ -91,4 +91,19 @@ public class seleniumeasyP2 {
         assertEquals(hiddenBtn.getAttribute("value"), "true");
     }
 
+    @Test
+    public void checkButton2Test() throws InterruptedException {
+        driver.manage().window().maximize();
+        driver.get("https://www.seleniumeasy.com/test/basic-checkbox-demo.html");
+        Thread.sleep(1000);
+
+        WebElement btn = driver.findElementById("check1");
+        WebElement hiddenBtn = driver.findElementById("isChkd");
+
+        btn.click();
+        btn.click();
+
+        assertEquals(hiddenBtn.getAttribute("value"), "false");
+    }
+
 }
