@@ -26,7 +26,6 @@ public class seleniumeasyP1 {
     public void input1() throws InterruptedException {
         driver.manage().window().maximize();
         driver.get("https://www.seleniumeasy.com/test/basic-first-form-demo.html");
-//        driver.wait(1000);
         Thread.sleep(1000);
 
         WebElement input = driver.findElementById("user-message");
@@ -40,6 +39,27 @@ public class seleniumeasyP1 {
         Thread.sleep(1000);
 
         assertEquals("testtext", displayarea.getText());
+    }
 
+    @Test
+    public void input2() throws InterruptedException {
+        driver.manage().window().maximize();
+        driver.get("https://www.seleniumeasy.com/test/basic-first-form-demo.html");
+        Thread.sleep(1000);
+
+        WebElement input1 = driver.findElementById("sum1");
+        input1.sendKeys("1");
+
+        WebElement input2 = driver.findElementById("sum2");
+        input2.sendKeys("2");
+
+        WebElement inputButton = driver.findElementByXPath("//*[@id=\"gettotal\"]/button");
+        inputButton.click();
+        Thread.sleep(1000);
+
+        WebElement displayarea = driver.findElementById("displayvalue");
+        Thread.sleep(1000);
+
+        assertEquals("3", displayarea.getText());
     }
 }
