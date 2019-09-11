@@ -38,4 +38,27 @@ public class seleniumeasyP2 {
         assertEquals(output.getText(), "Success - Check box is checked");
     }
 
+    @Test
+    public void multiCBAllBoxesTest() throws InterruptedException {
+        driver.manage().window().maximize();
+        driver.get("https://www.seleniumeasy.com/test/basic-checkbox-demo.html");
+        Thread.sleep(1000);
+
+        WebElement cb1 = driver.findElementByXPath("//*[@id=\"easycont\"]/div/div[2]/div[2]/div[2]/div[1]/label");
+        WebElement cb2 = driver.findElementByXPath("//*[@id=\"easycont\"]/div/div[2]/div[2]/div[2]/div[2]/label");
+        WebElement cb3 = driver.findElementByXPath("//*[@id=\"easycont\"]/div/div[2]/div[2]/div[2]/div[3]/label");
+        WebElement cb4 = driver.findElementByXPath("//*[@id=\"easycont\"]/div/div[2]/div[2]/div[2]/div[4]/label");
+
+        cb1.click();
+        cb2.click();
+        cb3.click();
+        cb4.click();
+        Thread.sleep(1000);
+
+        WebElement btn = driver.findElementById("check1");
+
+        assertEquals(btn.getAttribute("value"), "Uncheck All");
+
+    }
+
 }
