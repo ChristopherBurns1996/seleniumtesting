@@ -58,7 +58,37 @@ public class seleniumeasyP2 {
         WebElement btn = driver.findElementById("check1");
 
         assertEquals(btn.getAttribute("value"), "Uncheck All");
+    }
 
+    @Test
+    public void multiCBOneBoxTest() throws InterruptedException {
+        driver.manage().window().maximize();
+        driver.get("https://www.seleniumeasy.com/test/basic-checkbox-demo.html");
+        Thread.sleep(1000);
+
+        WebElement cb1 = driver.findElementByXPath("//*[@id=\"easycont\"]/div/div[2]/div[2]/div[2]/div[1]/label");
+
+        cb1.click();
+
+        Thread.sleep(1000);
+
+        WebElement btn = driver.findElementById("check1");
+
+        assertEquals(btn.getAttribute("value"), "Check All");
+    }
+
+    @Test
+    public void checkButtonTest() throws InterruptedException {
+        driver.manage().window().maximize();
+        driver.get("https://www.seleniumeasy.com/test/basic-checkbox-demo.html");
+        Thread.sleep(1000);
+
+        WebElement btn = driver.findElementById("check1");
+        WebElement hiddenBtn = driver.findElementById("isChkd");
+
+        btn.click();
+
+        assertEquals(hiddenBtn.getAttribute("value"), "true");
     }
 
 }
