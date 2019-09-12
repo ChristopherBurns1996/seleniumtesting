@@ -2,6 +2,7 @@ package com.qa;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class seleniumeasyP3 {
@@ -18,5 +19,8 @@ public class seleniumeasyP3 {
         driver.close();
     }
 
+    @Test
+    public void radio1Option1(){
 
+    }
 }
